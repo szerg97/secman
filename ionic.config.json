@@ -1,0 +1,7 @@
+{
+  "name": "secman",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

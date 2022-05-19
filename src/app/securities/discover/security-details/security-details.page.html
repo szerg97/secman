@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/securities/discover"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Details</ion-title>
+    <ion-buttons *ngIf="auth.isAdmin" slot="end">
+      <ion-button *ngIf="security" [routerLink]="['/', 'securities', 'edit-security', security.id]">
+        <ion-icon name="build-sharp" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="security">
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeSm="6" offsetSm="3">
+        <ion-card>
+          <ion-card-header>
+            <h1>{{ security.name }}</h1>
+          </ion-card-header>
+          <ion-card-content>
+            {{ security.description }}
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col sizeSm="6" offsetSm="3">
+        <ion-item lines="none">
+              <ion-label slot="start">Interest</ion-label>
+              <ion-label slot="end">{{ security.interest * 100  | number: '1.0-2'}}%</ion-label>
+       </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col sizeSm="6" offsetSm="3">
+        <ion-item lines="none">
+              <ion-label slot="start">Denomination</ion-label>
+              <ion-label slot="end">{{ security.denomination  | number: '1.0-2'}} HUF</ion-label>
+       </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

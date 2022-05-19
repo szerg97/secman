@@ -1,0 +1,17 @@
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+  <ion-tab-button tab="discover">
+    <ion-label>Discover</ion-label>
+    <ion-icon name="search-sharp"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button tab="purchased" *ngIf="!auth.isAdmin">
+    <ion-label>Purchased</ion-label>
+    <ion-icon name="card-sharp"></ion-icon>
+  </ion-tab-button>
+  <ion-tab-button tab="statistics" *ngIf="auth.isAdmin">
+    <ion-label>Statistics</ion-label>
+    <ion-icon name="bar-chart-sharp"></ion-icon>
+  </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
+

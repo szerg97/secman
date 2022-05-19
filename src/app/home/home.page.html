@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeMd="6" offsetSm="3" class="ion-text-center">
+        <ion-card>
+          <ion-card-header>
+            <h1>Login as</h1>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-buttons>
+              <ion-button (click)="loginAsAdmin()">
+                Admin
+              </ion-button>
+              <ion-button (click)="loginAsCustomer()">
+                Customer
+              </ion-button>
+            </ion-buttons>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

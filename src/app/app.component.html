@@ -1,0 +1,28 @@
+<ion-app>
+  <ion-menu side="start" contentId="menuContent" menuId="m1">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>SEC-MAN</ion-title>
+        <ion-title *ngIf="auth.isAdmin">Admin</ion-title>
+        <ion-title *ngIf="!auth.isAdmin">Customer</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" routerLink="/securities/discover">
+            <ion-icon name="newspaper-sharp" slot="start"></ion-icon>
+            <ion-label>Securities</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle menu="m1">
+          <ion-item lines="none" routerLink="/home">
+            <ion-icon name="log-out-sharp" slot="start"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet main id="menuContent"></ion-router-outlet>
+</ion-app>
