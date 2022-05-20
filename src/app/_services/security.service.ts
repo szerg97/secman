@@ -9,7 +9,6 @@ import { Security } from '../_models/security';
 export class SecurityService {
 
   private securities$ = new BehaviorSubject<Security[]>([]);
-
   constructor() {
     const securities: Security[] = [
       {id: '1', name: 'PMAP', description: 'PMAP something', denomination: 1000, interest: 0.025},

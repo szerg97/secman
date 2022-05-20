@@ -10,7 +10,7 @@ import { SecurityService } from './security.service';
 export class TransactionService {
 
   private transactions$ = new BehaviorSubject<Transaction[]>([]);
-
+  private lastId = 0;
   constructor(
     private securityService: SecurityService
   ) {
@@ -29,13 +29,21 @@ export class TransactionService {
       security: securities[1]},
     ];
     this.transactions$.next(transactions);
+
+    this.lastId = 2;
   }
 
   get transactions() {
     return this.transactions$.asObservable();
   }
 
-  addTransaction(transactions: Transaction[]){
-    return this.transactions$.next(transactions);
+  addTransaction(model: any){
+    const tr = {
+      id: (this.lastId + 1).toString(),
+      faceValue: model.faceValue,
+      realValue: model.realValue,
+      security: model.security
+    } as Transaction;
+    return this.transactions$.getValue().push(tr);
   }
 }
