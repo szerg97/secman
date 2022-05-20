@@ -14,9 +14,9 @@ import { TransactionService } from 'src/app/_services/transaction.service';
   styleUrls: ['./security-details.page.scss'],
 })
 export class SecurityDetailsPage implements OnInit {
-  @ViewChild('denominationCtrl') denom;
+  @ViewChild('faceValueCtrl') face;
   security: Security;
-  denomVal: number;
+  faceVal: number;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -26,7 +26,7 @@ export class SecurityDetailsPage implements OnInit {
     private loadingCtrl: LoadingController,
     public auth: AuthService
     ) {
-      this.denomVal = 0;
+      this.faceVal = 0;
      }
 
   ngOnInit() {
@@ -40,7 +40,7 @@ export class SecurityDetailsPage implements OnInit {
   }
 
   onChange(){
-    this.denomVal = this.denom.value;
+    this.faceVal = this.face.value;
   }
 
   onPurchase(form: NgForm){

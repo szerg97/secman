@@ -37,6 +37,10 @@ export class TransactionService {
     return this.transactions$.asObservable();
   }
 
+  getTransaction(id: string): Transaction{
+    return this.transactions$.getValue().filter(x => x.id === id)[0];
+  }
+
   addTransaction(model: any){
     const tr = {
       id: (this.lastId + 1).toString(),
@@ -44,6 +48,7 @@ export class TransactionService {
       realValue: model.realValue,
       security: model.security
     } as Transaction;
+    this.lastId++;
     return this.transactions$.getValue().push(tr);
   }
 }

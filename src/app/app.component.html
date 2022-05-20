@@ -2,7 +2,6 @@
   <ion-menu side="start" contentId="menuContent" menuId="m1">
     <ion-header>
       <ion-toolbar>
-        <ion-title>SEC-MAN</ion-title>
         <ion-title *ngIf="auth.isAdmin">Admin</ion-title>
         <ion-title *ngIf="!auth.isAdmin">Customer</ion-title>
       </ion-toolbar>

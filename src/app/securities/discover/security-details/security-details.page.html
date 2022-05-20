@@ -52,16 +52,16 @@
           <ion-label slot="end">Total</ion-label>
          </ion-item>
          <ion-item lines="none">
-          <ion-label slot="start">{{ denomVal | number: '1.0-2' }}</ion-label>
+          <ion-label slot="start">{{ faceVal | number: '1.0-2' }}</ion-label>
           <ion-icon name="arrow-forward-sharp"></ion-icon>
-          <ion-label slot="end">{{ denomVal + (security.interest * denomVal)| number: '1.0-2'}}</ion-label>
+          <ion-label slot="end">{{ faceVal + (security.interest * faceVal)| number: '1.0-2'}}</ion-label>
         </ion-item>
         <ion-item lines="none">
           <ion-range id="range" (ngModelChange)="onChange()" min="0" max="100000" step="{{security.denomination}}" pin snaps color="secondary"
-          name="denomination"
+          name="faceValue"
           ngModel
           required
-          #denominationCtrl="ngModel">
+          #faceValueCtrl="ngModel">
           </ion-range>
         </ion-item>
        </ion-col>
